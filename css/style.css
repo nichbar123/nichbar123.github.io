@@ -1,42 +1,118 @@
-body {
+:root{
+  --bg: #0b1220;
+  --card: #111b2e;
+  --text: #e7eefc;
+  --muted: #b7c6e6;
+  --accent: #3b82f6;
+  --border: rgba(255,255,255,0.10);
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin:0;
   font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-  background-color: #f4f4f4;
-  color: #333;
+  background: radial-gradient(1200px 600px at 20% -10%, rgba(59,130,246,0.25), transparent),
+              radial-gradient(900px 500px at 90% 10%, rgba(14,165,233,0.18), transparent),
+              var(--bg);
+  color: var(--text);
+  line-height: 1.6;
 }
 
-header {
-  background-color: #1f2933;
-  color: white;
-  text-align: center;
-  padding: 50px 20px;
+.container{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 18px;
 }
 
-section {
-  max-width: 900px;
-  margin: auto;
-  padding: 40px 20px;
+.hero{
+  padding: 56px 0 36px;
+  border-bottom: 1px solid var(--border);
 }
 
-.project {
-  background: white;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 8px;
+.subtitle{
+  color: var(--muted);
+  margin-top: 8px;
 }
 
-.button {
+.cta-row{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+section{
+  padding: 28px 0;
+}
+
+h1{ font-size: 40px; margin:0; }
+h2{ font-size: 22px; margin:0 0 14px; }
+h3{ margin: 0 0 10px; }
+
+.card{
+  background: rgba(17,27,46,0.85);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  transition: transform 120ms ease, border-color 120ms ease;
+}
+
+.card:hover{
+  transform: translateY(-2px);
+  border-color: rgba(59,130,246,0.45);
+}
+
+.card-body{
+  padding: 18px;
+}
+
+.thumb{
+  width: 100%;
+  display: block;
+  max-height: 240px;
+  object-fit: cover;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+@media (max-width: 780px){
+  .grid{ grid-template-columns: 1fr; }
+  h1{ font-size: 34px; }
+}
+
+a{
+  color: #9cc2ff;
+}
+
+.link-row{
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.button{
   display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: #3b82f6;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: var(--accent);
   color: white;
   text-decoration: none;
-  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.12);
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #ddd;
+.button.ghost{
+  background: transparent;
+}
+
+.footer{
+  padding: 22px 0;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
 }
