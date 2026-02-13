@@ -1,0 +1,50 @@
+/* Global styles (applies to whole page) */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+/* Header section */
+header {
+  background-color: #1f2933;
+  color: white;
+  padding: 40px;
+  text-align: center;
+}
+
+/* Section spacing */
+section {
+  padding: 40px;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Project cards */
+.project {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+/* Buttons */
+.button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 18px;
+  background-color: #3b82f6;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #e5e7eb;
+}
