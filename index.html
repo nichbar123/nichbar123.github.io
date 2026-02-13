@@ -1,55 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nick Bartlett | Data Science</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
 
-<header>
-  <h1>Nick Bartlett</h1>
-  <p>Data Science & Analytics | Machine Learning | Research</p>
-  <a class="button" href="assets/NJB2025Resume.pdf" target="_blank">Download Resume</a>
-</header>
+  <header class="hero">
+    <div class="container">
+      <h1>Nick Bartlett</h1>
+      <p class="subtitle">Data Science & Analytics | ML | Research | Visualization</p>
 
-<section>
-  <h2>Featured Projects</h2>
+      <div class="cta-row">
+        <!-- IMPORTANT: make sure the filename matches your repo -->
+        <a class="button" href="assets/NJBResume2025.pdf" target="_blank" rel="noopener">
+          Download Resume
+        </a>
+        <a class="button ghost" href="https://github.com/nichbar123" target="_blank" rel="noopener">
+          GitHub
+        </a>
+        <a class="button ghost" href="https://linkedin.com/in/njbartlett" target="_blank" rel="noopener">
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </header>
 
-  <div class="project">
-    <h3>Predicting Civil Conflict Using Economic Indicators</h3>
-    <p>Built and evaluated machine learning models to classify civil conflict types using economic indicators.</p>
-    <a href="https://github.com/AdamHumble/AsuDat490Fa24aCapstoneProject" target="_blank">View GitHub Repository</a><br>
-    <a href="assets/Capstone_Paper.pdf" target="_blank">Read Capstone Paper</a>
-  </div>
+  <main class="container">
 
-  <div class="project">
-    <h3>GRAMMYs Website Audience Analysis</h3>
-    <p>Analyzed audience engagement trends and translated web analytics into actionable insights.</p>
-    <a href="https://www.credential.net/3154b53d-0c00-4fc8-a936-362750d74d91#acc.i71eEWwB" target="_blank">View Credential</a>
-  </div>
+    <!-- FEATURED PROJECTS -->
+    <section>
+      <h2>Featured Project</h2>
 
-  <div class="project">
-    <h3>Hugging Face & NLP Lecture</h3>
-    <p>Guest lecture covering transformer models, NLP fundamentals, and Hugging Face ecosystem.</p>
-  </div>
+      <div class="project">
+          <h3>Spotify to MP3 Pipeline</h3>
+          <p>Automated pipeline for converting Spotify playlists into MP3 files.</p>
+      <a href="#">View on GitHub</a>
+      </div>
 
-  <div class="project">
-    <h3>Spotify to MP3 Pipeline</h3>
-    <p>Automated pipeline for converting Spotify playlists into MP3 files.</p>
-    <a href="#">View on GitHub</a>
-  </div>
- 
+      <div class="card">
+        <div class="card-body">
+          <h3>Predicting Civil Conflict Using Economic Indicators</h3>
+          <p>
+            Built and evaluated classification models using economic indicators (e.g., inflation and inequality),
+            achieving ~73% accuracy with a Random Forest model and presenting actionable insights.
+          </p>
 
-</section>
+          <div class="link-row">
+            <a href="https://github.com/AdamHumble/AsuDat490Fa24aCapstoneProject" target="_blank" rel="noopener">
+              View GitHub Repo →
+            </a>
+            <a href="assets/Capstone_Paper.pdf" target="_blank" rel="noopener">
+              Read Paper (PDF) →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<footer>
-  <p>
-    <a href="https://github.com/nichbar123" target="_blank">GitHub</a> |
-    <a href="https://linkedin.com/in/njbartlett" target="_blank">LinkedIn</a>
-  </p>
-</footer>
+    <!-- RESEARCH & PRESENTATIONS -->
+    <section>
+      <h2>Research & Presentations</h2>
+
+      <div class="grid">
+
+        <div class="card">
+          <!-- Upload your poster image into assets/images/ -->
+          <img class="thumb" src="assets/images/vr-poster.jpg" alt="VR in Postsecondary Career and Technical Education Poster">
+          <div class="card-body">
+            <h3>VR in Postsecondary Career & Technical Education</h3>
+            <p>
+              Research poster and conference presentation examining definitions, use cases, and research methods
+              for VR in Career & Technical Education.
+            </p>
+            <div class="link-row">
+              <a href="assets/images/vr-poster.jpeg" target="_blank" rel="noopener">View Poster Image →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h3>Demystifying Hugging Face: NLP & Transformers (Guest Lecture)</h3>
+            <p>
+              Slide deck introducing NLP fundamentals, transformer models, and the Hugging Face ecosystem.
+            </p>
+            <!-- Upload your slide PDF into assets/ -->
+            <div class="link-row">
+              <a href="assets/IntroToHuggingFace.pdf" target="_blank" rel="noopener">Open Slide Deck (PDF) →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section>
+      <h2>Certifications</h2>
+
+      <div class="grid">
+
+        <div class="card">
+          <!-- Upload your PNG screenshot into assets/images/ -->
+          <img class="thumb" src="assets/images/gca-data-analytics.png" alt="Global Career Accelerator - Data Analytics Certificate">
+          <div class="card-body">
+            <h3>Global Career Accelerator — Data Analytics (Part 1)</h3>
+            <div class="link-row">
+              <a href="https://www.credential.net/3154b53d-0c00-4fc8-a936-362750d74d91#acc.3gn7jFBb" target="_blank" rel="noopener">
+                View Credential →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+           <img
+             class="thumb"
+             src="assets/images/gca-website-audience-analysis.png"
+             alt="Global Career Accelerator – Website Audience Analysis Certificate"
+           >
+          <div class="card-body">
+            <h3>Global Career Accelerator — The GRAMMYs Project (Website Audience Analysis)</h3>
+            <p>Credential documenting applied analytics work on website audience analysis.</p>
+            <div class="link-row">
+              <a href="https://www.credential.net/3154b53d-0c00-4fc8-a936-362750d74d91#acc.i71eEWwB" target="_blank" rel="noopener">
+                View Credential →
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section>
+      <h2>Contact</h2>
+      <div class="card">
+        <div class="card-body">
+          <p>Email: <a href="mailto:nickb567@icloud.com">nickb567@icloud.com</a></p>
+          <p>
+            <a href="https://github.com/nichbar123" target="_blank" rel="noopener">GitHub</a> ·
+            <a href="https://linkedin.com/in/njbartlett" target="_blank" rel="noopener">LinkedIn</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <small>© <span id="year"></span> Nick Bartlett</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
