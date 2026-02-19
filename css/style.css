@@ -156,4 +156,7 @@ body {
   z-index: 1;
 }
 
+body {
+  cursor: none;
+}
 
