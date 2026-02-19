@@ -90,8 +90,8 @@
 // ---- Rocket Cursor ----
 
 // Store previous position for angle calculation
-      let dx = mouseX - cursorX;
-      let dy = mouseY - cursorY;
+      let dx = cursorX - pmouseX;
+      let dy = cursorY - pmouseY;
 
 
 // Smooth motion
