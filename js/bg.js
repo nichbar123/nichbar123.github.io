@@ -95,45 +95,45 @@
 // ---- Rocket Cursor ----
 
 // Smooth cursor movement
-cursorX = lerp(cursorX, mouseX, 0.25);
-cursorY = lerp(cursorY, mouseY, 0.25);
+    cursorX = lerp(cursorX, mouseX, 0.25);
+    cursorY = lerp(cursorY, mouseY, 0.25);
 
 // Draw rocket emoji
-textSize(28);
-textAlign(CENTER, CENTER);
-text("🚀", cursorX, cursorY);
+    textSize(28);
+    textAlign(CENTER, CENTER);
+    text("🚀", cursorX, cursorY);
 
 // Create flame particles
-for (let i = 0; i < 2; i++) {
-  particles.push({
-    x: cursorX,
-    y: cursorY + 12,
-    vx: random(-0.8, 0.8),
-    vy: random(1, 2.5),
-    size: random(4, 10),
-    life: 255
+    for (let i = 0; i < 2; i++) {
+      particles.push({
+        x: cursorX,
+        y: cursorY + 12,
+        vx: random(-0.8, 0.8),
+        vy: random(1, 2.5),
+        size: random(4, 10),
+        life: 255
   });
 }
 
 // Update + draw particles
-for (let i = particles.length - 1; i >= 0; i--) {
-  let p = particles[i];
+  for (let i = particles.length - 1; i >= 0; i--) {
+    let p = particles[i];
 
-  p.x += p.vx;
-  p.y += p.vy;
-  p.life -= 6;
+    p.x += p.vx;
+    p.y += p.vy;
+    p.life -= 6;
 
   // Flame colors (yellow → orange → red fade)
-  let r = 255;
-  let g = map(p.life, 0, 255, 0, 200);
-  let b = 0;
+    let r = 255;
+    let g = map(p.life, 0, 255, 0, 200);
+    let b = 0;
 
-  noStroke();
-  fill(r, g, b, p.life);
-  ellipse(p.x, p.y, p.size);
+    noStroke();
+    fill(r, g, b, p.life);
+    ellipse(p.x, p.y, p.size);
 
-  if (p.life <= 0) {
-    particles.splice(i, 1);
+    if (p.life <= 0) {
+      particles.splice(i, 1);
   }
 }
 
