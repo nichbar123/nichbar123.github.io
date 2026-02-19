@@ -90,8 +90,8 @@
 // ---- Rocket Cursor ----
 
 // Store previous position for angle calculation
-let dx = curserX - pmouseX;
-let dy = cursorY - pmouseY;
+let dx = mouseX - cursorX;
+let dy = mouseY - cursorY;
 
 // Smooth motion
 cursorX = lerp(cursorX, mouseX, 0.25);
@@ -105,7 +105,7 @@ push();
 translate(cursorX, cursorY);
 rotate(angle + PI); // adjust so rocket points forward
 textAlign(CENTER, CENTER);
-textSize(28);
+textSize(26);
 text("🚀", 0, 0);
 pop();
 
