@@ -146,14 +146,14 @@ a{
 #bg-canvas {
   position: fixed;
   inset: 0;
-  z-index: -1;          /* behind everything */
+  z-index: 0;          /* behind everything */
   pointer-events: none; /* never block clicks */
 }
 
 /* If anything still ends up behind it, force your main content above */
 body {
   position: relative;
-  z-index: 0;
+  z-index: 1;
 }
 
 
