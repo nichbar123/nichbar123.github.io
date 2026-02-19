@@ -14,6 +14,12 @@
   const dots = [];
   const DOT_COUNT = 90;
 
+  // Rocket trail particles
+  const particles = [];
+  let cursorX = 0;
+  let cursorY = 0;
+
+
   function hexToRgb(hex) {
     const h = hex.replace("#", "").trim();
     if (h.length !== 6) return { r: 59, g: 130, b: 246 };
@@ -28,6 +34,7 @@
   const mutedRGB = hexToRgb(MUTED);
 
   window.setup = function () {
+    noCursor();
     // Create and tag the canvas so we can style it reliably in CSS
     const c = createCanvas(windowWidth, windowHeight);
     c.id("bg-canvas");
@@ -85,25 +92,49 @@
     fill(accentRGB.r, accentRGB.g, accentRGB.b, 28);
     circle(mouseX, mouseY, 180);
 
-    // ---- Cursor Trail ----
+// ---- Rocket Cursor ----
 
-// Add current mouse position
-    trail.push({ x: mouseX, y: mouseY });
+// Smooth cursor movement
+cursorX = lerp(cursorX, mouseX, 0.25);
+cursorY = lerp(cursorY, mouseY, 0.25);
 
-// Keep trail length fixed
-    if (trail.length > TRAIL_LENGTH) {
-      trail.shift();
+// Draw rocket emoji
+textSize(28);
+textAlign(CENTER, CENTER);
+text("🚀", cursorX, cursorY);
+
+// Create flame particles
+for (let i = 0; i < 2; i++) {
+  particles.push({
+    x: cursorX,
+    y: cursorY + 12,
+    vx: random(-0.8, 0.8),
+    vy: random(1, 2.5),
+    size: random(4, 10),
+    life: 255
+  });
 }
 
-// Draw trail
-    for (let i = 0; i < trail.length; i++) {
-      const p = trail[i];
-      const alpha = map(i, 0, trail.length, 10, 120);
-      const size = map(i, 0, trail.length, 4, 14);
+// Update + draw particles
+for (let i = particles.length - 1; i >= 0; i--) {
+  let p = particles[i];
 
-      noStroke();
-      fill(accentRGB.r, accentRGB.g, accentRGB.b, alpha);
-      circle(p.x, p.y, size);
+  p.x += p.vx;
+  p.y += p.vy;
+  p.life -= 6;
+
+  // Flame colors (yellow → orange → red fade)
+  let r = 255;
+  let g = map(p.life, 0, 255, 0, 200);
+  let b = 0;
+
+  noStroke();
+  fill(r, g, b, p.life);
+  ellipse(p.x, p.y, p.size);
+
+  if (p.life <= 0) {
+    particles.splice(i, 1);
+  }
 }
 
   };
