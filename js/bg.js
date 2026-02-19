@@ -103,9 +103,9 @@ let angle = atan2(dy, dx);
 // Draw rotated rocket
 push();
 translate(cursorX, cursorY);
-rotate(angle + HALF_PI); // adjust so rocket points forward
+rotate(angle + PI); // adjust so rocket points forward
 textAlign(CENTER, CENTER);
-textSize(22);
+textSize(28);
 text("🚀", 0, 0);
 pop();
 
