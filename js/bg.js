@@ -87,11 +87,6 @@
       }
     }
 
-    // Soft mouse glow (very subtle)
-    noStroke();
-    fill(accentRGB.r, accentRGB.g, accentRGB.b, 28);
-    circle(mouseX, mouseY, 180);
-
 // ---- Rocket Cursor ----
 
 // Smooth cursor movement
@@ -99,7 +94,7 @@
     cursorY = lerp(cursorY, mouseY, 0.25);
 
 // Draw rocket emoji
-    textSize(28);
+    textSize(22);
     textAlign(CENTER, CENTER);
     text("🚀", cursorX, cursorY);
 
