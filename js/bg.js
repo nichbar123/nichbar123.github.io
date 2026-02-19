@@ -104,7 +104,7 @@
 // Draw rotated rocket
       push();
       translate(cursorX, cursorY);
-      rotate(angle + PI); // adjust so rocket points forward
+      rotate(angle + HALF_PI); // adjust so rocket points forward
       textAlign(CENTER, CENTER);
       textSize(26);
       text("🚀", 0, 0);
