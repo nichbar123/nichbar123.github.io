@@ -6,6 +6,11 @@
   const ACCENT = css.getPropertyValue("--accent").trim() || "#3b82f6";
   const MUTED = css.getPropertyValue("--muted").trim() || "#b7c6e6";
 
+  // Cursor trail
+  const trail = [];
+  const TRAIL_LENGTH = 18;
+
+  
   const dots = [];
   const DOT_COUNT = 90;
 
@@ -78,6 +83,28 @@
     noStroke();
     fill(accentRGB.r, accentRGB.g, accentRGB.b, 28);
     circle(mouseX, mouseY, 180);
+
+    // ---- Cursor Trail ----
+
+// Add current mouse position
+    trail.push({ x: mouseX, y: mouseY });
+
+// Keep trail length fixed
+    if (trail.length > TRAIL_LENGTH) {
+      trail.shift();
+}
+
+// Draw trail
+    for (let i = 0; i < trail.length; i++) {
+      const p = trail[i];
+      const alpha = map(i, 0, trail.length, 10, 120);
+      const size = map(i, 0, trail.length, 4, 14);
+
+      noStroke();
+      fill(accentRGB.r, accentRGB.g, accentRGB.b, alpha);
+      circle(p.x, p.y, size);
+}
+
   };
 
   window.windowResized = function () {
