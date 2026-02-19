@@ -49,7 +49,8 @@
 
   window.draw = function () {
     // Background (p5 can parse hex colors)
-    background(BG);
+    clear();
+    
 
     // Subtle “constellation” lines + dots
     noFill();
