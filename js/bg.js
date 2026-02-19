@@ -90,56 +90,57 @@
 // ---- Rocket Cursor ----
 
 // Store previous position for angle calculation
-let dx = mouseX - cursorX;
-let dy = mouseY - cursorY;
+      let dx = mouseX - cursorX;
+      let dy = mouseY - cursorY;
+
 
 // Smooth motion
-cursorX = lerp(cursorX, mouseX, 0.25);
-cursorY = lerp(cursorY, mouseY, 0.25);
+      cursorX = lerp(cursorX, mouseX, 0.25);
+      cursorY = lerp(cursorY, mouseY, 0.25);
 
 // Calculate angle of movement
-let angle = atan2(dy, dx);
+      let angle = atan2(dy, dx);
 
 // Draw rotated rocket
-push();
-translate(cursorX, cursorY);
-rotate(angle + PI); // adjust so rocket points forward
-textAlign(CENTER, CENTER);
-textSize(26);
-text("🚀", 0, 0);
-pop();
+      push();
+      translate(cursorX, cursorY);
+      rotate(angle + PI); // adjust so rocket points forward
+      textAlign(CENTER, CENTER);
+      textSize(26);
+      text("🚀", 0, 0);
+      pop();
 
 // Emit flame particles opposite movement direction
-for (let i = 0; i < 2; i++) {
-  particles.push({
-    x: cursorX,
-    y: cursorY,
-    vx: -cos(angle) * random(1, 2) + random(-0.5, 0.5),
-    vy: -sin(angle) * random(1, 2) + random(-0.5, 0.5),
-    size: random(4, 9),
-    life: 255
+  for (let i = 0; i < 2; i++) {
+    particles.push({
+      x: cursorX,
+      y: cursorY,
+      vx: -cos(angle) * random(1, 2) + random(-0.5, 0.5),
+      vy: -sin(angle) * random(1, 2) + random(-0.5, 0.5),
+      size: random(4, 9),
+      life: 255
   });
 }
 
 // Update + draw particles
-for (let i = particles.length - 1; i >= 0; i--) {
-  let p = particles[i];
+  for (let i = particles.length - 1; i >= 0; i--) {
+    let p = particles[i];
 
-  p.x += p.vx;
-  p.y += p.vy;
-  p.life -= 7;
+    p.x += p.vx;
+    p.y += p.vy;
+    p.life -= 7;
 
   // Flame gradient
-  let r = 255;
-  let g = map(p.life, 0, 255, 0, 200);
-  let b = 0;
+    let r = 255;
+    let g = map(p.life, 0, 255, 0, 200);
+    let b = 0;
 
-  noStroke();
-  fill(r, g, b, p.life);
-  ellipse(p.x, p.y, p.size);
+    noStroke();
+    fill(r, g, b, p.life);
+    ellipse(p.x, p.y, p.size);
 
-  if (p.life <= 0) {
-    particles.splice(i, 1);
+    if (p.life <= 0) {
+      particles.splice(i, 1);
   }
 }
 
