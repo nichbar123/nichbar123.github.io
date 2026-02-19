@@ -90,8 +90,8 @@
 // ---- Rocket Cursor ----
 
 // Store previous position for angle calculation
-let dx = mouseX - cursorX;
-let dy = mouseY - cursorY;
+let dx = curserX - pmouseX;
+let dy = cursorY - pmouseY;
 
 // Smooth motion
 cursorX = lerp(cursorX, mouseX, 0.25);
