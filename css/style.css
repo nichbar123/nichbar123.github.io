@@ -79,7 +79,7 @@ h3{ margin: 0 0 10px; }
   object-fit: contain;
   margin: 6px;
   border-radius: 10px;
-  background: #fff;
+  background: #111b2e;
 
   /* THIS LINE FIXES YOUR ISSUE */
   pointer-events: none;
