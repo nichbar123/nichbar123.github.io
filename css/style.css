@@ -12,19 +12,23 @@
 body{
   margin:0;
   font-family: Arial, Helvetica, sans-serif;
-  background: radial-gradient(1200px 600px at 20% -10%, rgba(59,130,246,0.25), transparent),
-              radial-gradient(900px 500px at 90% 10%, rgba(14,165,233,0.18), transparent),
-              var(--bg);
+  background:
+    radial-gradient(1200px 600px at 20% -10%, rgba(59,130,246,0.25), transparent),
+    radial-gradient(900px 500px at 90% 10%, rgba(14,165,233,0.18), transparent),
+    var(--bg);
   color: var(--text);
   line-height: 1.6;
+  cursor: none;
 }
 
+/* CONTAINER */
 .container{
   max-width: 980px;
   margin: 0 auto;
   padding: 0 18px;
 }
 
+/* HERO */
 .hero{
   padding: 56px 0 36px;
   border-bottom: 1px solid var(--border);
@@ -42,6 +46,7 @@ body{
   margin-top: 18px;
 }
 
+/* SECTIONS */
 section{
   padding: 28px 0;
 }
@@ -50,46 +55,43 @@ h1{ font-size: 40px; margin:0; }
 h2{ font-size: 22px; margin:0 0 14px; }
 h3{ margin: 0 0 10px; }
 
-/* CARD WRAPPER */
+/* CARD */
 .card{
-  background: linear-gradient(
-    to bottom,
-    #111b2e,
-    #0f172a
-  );
-
+  background: var(--card); /* fully solid */
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: 14px;
-
   overflow: hidden;
-
   box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-
   transition: border-color 120ms ease, box-shadow 120ms ease;
 }
 
 .card:hover{
-  border-color: #3b82f6;
+  border-color: var(--accent);
   box-shadow: 0 12px 34px rgba(0,0,0,0.35);
 }
 
+/* IMAGE WRAPPER (forces clean background) */
+.image-wrapper{
+  background: #ffffff; /* white behind images */
+  padding: 8px;
+}
+
+/* IMAGE STYLE */
 .image-card .thumb{
   width: 100%;
-  max-height: 260px;
-  object-fit: contain;
-  margin: 6px;
+  height: 260px;
+  object-fit: cover; /* fills area cleanly */
+  display: block;
   border-radius: 10px;
-  background: #fff;
-
   pointer-events: none;
 }
 
-
-
+/* CARD BODY */
 .card-body{
   padding: 18px;
 }
 
+/* GRID */
 .grid{
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -101,6 +103,7 @@ h3{ margin: 0 0 10px; }
   h1{ font-size: 34px; }
 }
 
+/* LINKS */
 a{
   color: #9cc2ff;
 }
@@ -112,6 +115,7 @@ a{
   margin-top: 10px;
 }
 
+/* BUTTONS */
 .button{
   display: inline-block;
   padding: 10px 16px;
@@ -126,29 +130,26 @@ a{
   background: transparent;
 }
 
+/* FOOTER */
 .footer{
   padding: 22px 0;
   border-top: 1px solid var(--border);
   color: var(--muted);
 }
 
-  /* p5 background canvas */
+/* P5 BACKGROUND */
 #bg-canvas {
   position: fixed;
   inset: 0;
-  z-index: 0;          /* behind everything */
-  pointer-events: none; /* never block clicks */
+  z-index: -1;   /* GUARANTEED behind everything */
+  pointer-events: none;
 }
 
+/* ENSURE CONTENT IS ABOVE CANVAS */
 header,
 main,
 footer {
   position: relative;
   z-index: 1;
 }
-
-body {
-  cursor: none;
-}
-
 
