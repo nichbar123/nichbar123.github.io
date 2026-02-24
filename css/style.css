@@ -83,7 +83,6 @@ h3{ margin: 0 0 10px; }
   object-fit: cover; /* fills area cleanly */
   display: block;
   border-radius: 10px;
-  pointer-events: none;
 }
 
 /* CARD BODY */
